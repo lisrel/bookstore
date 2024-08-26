@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Bookstore</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+<head>
+  <title>
+    Bookstore <%= @page_title ? @page_title : 'Welcome'%>  | The Bookstore
+  </title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+</head>
 
-  <body>
-  <nav class="navbar navbar-default navbar-fixed-top">
+<body>
+  <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -27,11 +29,11 @@
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li class="active">
+          <li class="<%= params[:controller] == 'books' ? 'active': '' %>">
             <%=link_to 'Home',root_path %>
           </li>
 
-          <li>
+          <li class="<%= params[:controller] == 'about' ? 'active' : '' %>">
             <%=link_to 'About', about_path %>
           </li>
 
@@ -60,10 +62,39 @@
         </ul>
       </div><!--/.nav-collapse -->
     </div>
-  </nav>
+  </div>
+  <header>
+    <div class="container">
+      <h1>
+        The BookStore <small><%= @page_title ? @page_title : 'Welcome'%></small>
+      </h1>
+    </div>
+  </header>
 
-    <%= yield %>
-  </body>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <%= yield %>
+        </div>
+
+        <div class="col-md-4">
+          <%= render 'partials/sidebar'%>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+<footer>
+  <div class="container">
+   <p>
+     Copyright &copy; 2024, All Rights Reserved T.L.B
+   </p>
+  </div>
+</footer>
+
+</body>
 </html>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
