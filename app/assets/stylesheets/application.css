@@ -37,3 +37,28 @@ footer {
     padding-top: 20px;
     text-align: center;
 }
+
+#books-index img{
+    width: 100%;
+    height: fit-content;
+    padding: 3px;
+    border: 1px solid #ccc;
+}
+
+#books-image{
+    text-align: center;
+}
+
+#books-image h3{
+    height: 50px;
+}
+
+#books-index .btn{
+    display: block;
+    margin-top: 20px;
+}
+
+.row {
+    display: flex
+}
+
