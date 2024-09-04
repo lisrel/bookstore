@@ -1,6 +1,5 @@
 
 <% if params[:controller] == 'about' %>
-
 <div class="well">
   <h3>
 	Location info
@@ -11,5 +10,13 @@
 	<li>Phone: +263 778 795 010</li>
 	<li>Email: tbilliat26@gmail.com</li>
   </ul>
+</div>
+<% end %>
+
+<% if params[:controller] == 'books' && (params[:action] == 'new' || params[:action] == 'show') %>
+<div class="list-group">
+  <a href="#" class="list-group-item">Ruby on Rails</a>
+  <a href="#" class="list-group-item">PHP</a>
+  <a href="#" class="list-group-item">HTML 5</a>
 </div>
 <% end %>
