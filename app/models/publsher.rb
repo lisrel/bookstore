@@ -1,0 +1,2 @@
+class Publsher < ApplicationRecord
+end
