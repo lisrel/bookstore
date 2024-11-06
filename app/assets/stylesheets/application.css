@@ -82,7 +82,10 @@ footer {
 #books-show .btn{
     margin: 20px 0 0 70px;
 }
+
 .books-show-left img{
-    max-height: -webkit-fill-available;
-    max-width: -webkit-fill-available;
+    width: 100%;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    width: fill-available;
 }
