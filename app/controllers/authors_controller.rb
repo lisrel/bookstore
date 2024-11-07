@@ -5,6 +5,10 @@ class AuthorsController < ApplicationController
   end
 
   def create
+    @author = Author.new(author_params)
+    @author.save
+
+    redirect_to authors_path
   end
 
   def update
@@ -24,6 +28,6 @@ class AuthorsController < ApplicationController
 
   private
     def author_params
-      params.require (:author).permit(:first_name, :last_name)
+      params.require(:author).permit(:first_name, :last_name)
     end
 end
