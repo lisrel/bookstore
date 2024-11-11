@@ -3,36 +3,14 @@
   <% @books.each_slice(4) do |book| %>
 	<div class="row">
 	  <% book.each do |book| %>
-
-	  <% end %>
+		<div class="col-md-3 col-sm-3">
+		  <h3><%=book.title %></h3>
+		  <%= image_tag(book.coverpath) if book.coverpath %>
+		  <%= link_to 'Read More', book_path(book), class: 'btn btn-primary' %>
+		</div>
+	<% end %>
 	</div>
 	<div class="clearfix"></div>
   <% end %>
-  <div class="row">
-	<div class="col-md-3 col-sm-3">
-	  <h3>Ruby On Rails Power</h3>
-	  <%= image_tag('covers/powerofrails.png') %>
-	  <%= link_to 'Read More', book_path(1), class: 'btn btn-primary' %>
-	</div>
 
-	<div class="col-md-3 col-sm-3">
-	  <h3>Ruby On Rails 3</h3>
-	  <%= image_tag('covers/rails3.jpg') %>
-	  <%= link_to 'Read More', book_path(1), class: 'btn btn-primary' %>
-	</div>
-
-	<div class="col-md-3 col-sm-3">
-	  <h3>Ruby On Rails 5</h3>
-	  <%= image_tag('covers/rails5.jpg') %>
-	  <%= link_to 'Read More', book_path(1), class: 'btn btn-primary' %>
-	</div>
-
-	<div class="col-md-3 col-sm-3">
-	  <h3>Ruby On Rails 6</h3>
-	  <%= image_tag('covers/rails6.jpg') %>
-	  <%= link_to 'Read More', book_path(1), class: 'btn btn-primary' %>
-	</div>
-
-  </div>
-  <div class="clearfix"></div>
 </div>
